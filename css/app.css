@@ -19,9 +19,43 @@
   max-width: 100%;
   float: left;
   margin-right: 20px;
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
 
 .post p {
   font-size: 18px;
+}
+
+.post ul {
+  margin-top: 20px;
+  list-style: none;
+}
+
+.post ul span {
+  font-size: 20px;
+}
+
+.post ul li {
+  display: inline-block;
+  font-size: 20px;
+  text-transform: capitalize;
+}
+
+.post ul li a {
+  color: grey;
+  text-decoration: none;
+}
+
+.post ul li a:hover {
+  color: blue;
+}
+
+.post ul li a:after {
+  content: " - ";
+}
+
+.post ul li:last-child a:after {
+  content: "";
 }
 

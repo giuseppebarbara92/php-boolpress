@@ -23,16 +23,30 @@
           $postBlog = $post;
         }
       }
+
+      $date = DateTime::createFromFormat('d/m/Y H:i:s', $postBlog['published_at']);
      ?>
 
      <div class="container">
        <div class="post">
 
          <h1><?php echo $postBlog['title']; ?></h1>
-
+         <small>Pubblicato il <?php echo $date->format('d F'); ?> alle <?php echo $date->format('H'); ?></small>
          <img src="<?php echo $postBlog['image']; ?>" alt="<?php echo $postBlog['title']; ?>"width="250">
 
          <p><?php echo $postBlog['content']; ?></p>
+
+         <ul>
+           <span>Tag: </span>
+           <?php foreach ($postBlog['tag'] as $tag) { ?>
+             <li>
+               <a href="#">
+                 <?php echo $tag; ?>
+               </a>
+              </li>
+           <?php } ?>
+
+         </ul>
 
        </div>
 

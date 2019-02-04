@@ -12,11 +12,12 @@
       <?php include 'database.php'; ?>
 
       <?php foreach ($posts as $post) { ?>
+        <?php $date = DateTime::createFromFormat('d/m/Y H:i:s', $post['published_at']); ?>
         <h3>
           <a href="http://localhost/boolpress-php/post-details.php?slug=<?php echo $post['slug']; ?>">
             <?php echo $post['title']; ?>
           </a>
-
+        <small>Pubblicato il <?php echo $date->format('d F'); ?> alle <?php echo $date->format('H');?></small>
         </h3>
         <p><?php echo substr($post['content'], 0, 150) ?>...</p>
       <?php } ?>
